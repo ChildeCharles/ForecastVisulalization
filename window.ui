@@ -43,25 +43,12 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="city_input">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="date_label">
        <property name="text">
         <string>Select date:</string>
        </property>
       </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QDateEdit" name="date_input"/>
      </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="apply_button">
@@ -73,12 +60,72 @@
      <item row="2" column="2" colspan="2">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="temperature_checkbox">
+           <property name="text">
+            <string>Temperature</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="clouds_checkbox">
+           <property name="text">
+            <string>Clouds</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="pressure_checkbox">
+           <property name="text">
+            <string>Pressure</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QCheckBox" name="precipitation_checkbox">
+           <property name="text">
+            <string>Precipitation</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="wind_checkbox">
+           <property name="text">
+            <string>Wind</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <widget class="QWidget" name="widget_3d" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>620</width>
+           <height>713</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -86,6 +133,12 @@
      </item>
      <item row="2" column="0" colspan="2">
       <widget class="QWidget" name="widget_2d" native="true"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="city_combo_box"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="date_combo_box"/>
      </item>
     </layout>
    </widget>
