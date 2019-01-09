@@ -23,11 +23,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.initialize_combo_boxes(cities, self.forecast_data)
         self.map_widget = MapWidget(parent=self.widget_3d, geographic_bounds=self.bounds, cities=cities)
         self.render_data_on_map()
-        self.precipitation_checkbox.stateChanged.connect(self.map_widget.toggle_precipitation)
-        self.clouds_checkbox.stateChanged.connect(self.map_widget.toggle_clouds)
-        self.wind_checkbox.stateChanged.connect(self.map_widget.toggle_wind)
-        self.temperature_checkbox.stateChanged.connect(self.map_widget.toggle_temperature)
-        self.pressure_checkbox.stateChanged.connect(self.map_widget.toggle_pressure)
+        self.precipitation_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'precipitation'))
+        self.clouds_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'clouds'))
+        self.wind_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'wind'))
+        self.temperature_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'temperature'))
+        self.pressure_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'pressure'))
+        self.reset_camera_button.clicked.connect(self.map_widget.reset_camera)
 
     def download_data(self, cities):
         weather_for_city = {}

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'window.ui'
+# Form implementation generated from reading ui file 'window_no_apply.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -20,15 +20,6 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(15, 15, 15, 15)
         self.gridLayout.setObjectName("gridLayout")
-        self.city_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.city_label.setObjectName("city_label")
-        self.gridLayout.addWidget(self.city_label, 0, 0, 1, 1)
-        self.date_label = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.date_label.setObjectName("date_label")
-        self.gridLayout.addWidget(self.date_label, 1, 0, 1, 1)
-        self.apply_button = QtWidgets.QPushButton(self.gridLayoutWidget)
-        self.apply_button.setObjectName("apply_button")
-        self.gridLayout.addWidget(self.apply_button, 1, 2, 1, 1)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.gridLayout_2 = QtWidgets.QGridLayout()
@@ -55,24 +46,33 @@ class Ui_MainWindow(object):
         self.gridLayout_2.addWidget(self.wind_checkbox, 2, 0, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout_2)
         self.widget_3d = QtWidgets.QWidget(self.gridLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.MinimumExpanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget_3d.sizePolicy().hasHeightForWidth())
         self.widget_3d.setSizePolicy(sizePolicy)
-        self.widget_3d.setMinimumSize(QtCore.QSize(620, 713))
+        self.widget_3d.setMinimumSize(QtCore.QSize(620, 700))
         self.widget_3d.setObjectName("widget_3d")
         self.verticalLayout.addWidget(self.widget_3d)
         self.gridLayout.addLayout(self.verticalLayout, 2, 2, 1, 2)
         self.widget_2d = QtWidgets.QWidget(self.gridLayoutWidget)
         self.widget_2d.setObjectName("widget_2d")
         self.gridLayout.addWidget(self.widget_2d, 2, 0, 1, 2)
+        self.date_label = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.date_label.setObjectName("date_label")
+        self.gridLayout.addWidget(self.date_label, 1, 0, 1, 1)
+        self.city_label = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.city_label.setObjectName("city_label")
+        self.gridLayout.addWidget(self.city_label, 0, 0, 1, 1)
         self.city_combo_box = QtWidgets.QComboBox(self.gridLayoutWidget)
         self.city_combo_box.setObjectName("city_combo_box")
         self.gridLayout.addWidget(self.city_combo_box, 0, 1, 1, 1)
         self.date_combo_box = QtWidgets.QComboBox(self.gridLayoutWidget)
         self.date_combo_box.setObjectName("date_combo_box")
         self.gridLayout.addWidget(self.date_combo_box, 1, 1, 1, 1)
+        self.reset_camera_button = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.reset_camera_button.setObjectName("reset_camera_button")
+        self.gridLayout.addWidget(self.reset_camera_button, 1, 3, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -81,12 +81,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Forecast Visualization"))
-        self.city_label.setText(_translate("MainWindow", "Select city:"))
-        self.date_label.setText(_translate("MainWindow", "Select date:"))
-        self.apply_button.setText(_translate("MainWindow", "Apply"))
         self.temperature_checkbox.setText(_translate("MainWindow", "Temperature"))
         self.clouds_checkbox.setText(_translate("MainWindow", "Clouds"))
         self.pressure_checkbox.setText(_translate("MainWindow", "Pressure"))
         self.precipitation_checkbox.setText(_translate("MainWindow", "Precipitation"))
         self.wind_checkbox.setText(_translate("MainWindow", "Wind"))
+        self.date_label.setText(_translate("MainWindow", "Select date:"))
+        self.city_label.setText(_translate("MainWindow", "Select city:"))
+        self.reset_camera_button.setText(_translate("MainWindow", "Reset map position"))
 

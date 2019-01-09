@@ -36,27 +36,6 @@
      <property name="bottomMargin">
       <number>15</number>
      </property>
-     <item row="0" column="0">
-      <widget class="QLabel" name="city_label">
-       <property name="text">
-        <string>Select city:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="date_label">
-       <property name="text">
-        <string>Select date:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="apply_button">
-       <property name="text">
-        <string>Apply</string>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="2" colspan="2">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -134,11 +113,32 @@
      <item row="2" column="0" colspan="2">
       <widget class="QWidget" name="widget_2d" native="true"/>
      </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="date_label">
+       <property name="text">
+        <string>Select date:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="city_label">
+       <property name="text">
+        <string>Select city:</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="1">
       <widget class="QComboBox" name="city_combo_box"/>
      </item>
      <item row="1" column="1">
       <widget class="QComboBox" name="date_combo_box"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="QPushButton" name="reset_camera_button">
+       <property name="text">
+        <string>Reset map position</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
