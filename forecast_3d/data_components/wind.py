@@ -16,8 +16,8 @@ def create_actor(x, y, wind, is_visible):
     arrow_source.SetShaftResolution(50)
     arrow_source.SetTipResolution(50)
 
-    start_point = [x, y, 5]
-    end_point = [x - arrow_length * sin(radians(direction)), y - arrow_length * cos(radians(direction)), 5]
+    start_point = [x, y, 15]
+    end_point = [x - arrow_length * sin(radians(direction)), y - arrow_length * cos(radians(direction)), 15]
 
     # Compute a basis
     normalized_x = [0, 0, 0]

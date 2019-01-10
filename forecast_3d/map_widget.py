@@ -40,7 +40,7 @@ class MapWidget:
         self.initialize_legend()
 
     def initialize_map(self):
-        reader = vtk.vtkPNGReader()
+        reader = vtk.vtkJPEGReader()
         reader.SetFileName(IMAGES_PATH + MAP_FILENAME)
         reader.Update()
 
