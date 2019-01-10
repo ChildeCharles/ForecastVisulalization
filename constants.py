@@ -3,6 +3,7 @@ import vtk
 MAX_DAY_OFFSET = 4
 IMAGES_PATH = "./images/"
 MAP_FILENAME = "poland_map_small.png"
+CLOUD_FILENAME = "cloud.stl"
 GALE_SPEED = 30  # m/s
 
 colors = vtk.vtkNamedColors()

@@ -13,6 +13,7 @@ def normalize(value, minimum, maximum):
 
 class MapWidget:
     def __init__(self, parent: QWidget, geographic_bounds: dict, cities: list):
+        self.parent = parent
         self.geographic_bounds = geographic_bounds
         self.cities = cities
         self.vtk_widget = QVTKRenderWindowInteractor(parent)
@@ -31,6 +32,12 @@ class MapWidget:
         self.interactor.Initialize()
         self.renderer.GetActiveCamera().Elevation(-15)
         self.renderer.ResetCamera()
+
+    def update_size(self):
+        self.vtk_widget.resize(self.parent.size())
+        for actor in self.legend_actors['temperature'] + self.legend_actors['pressure']:
+            self.renderer.RemoveActor(actor)
+        self.initialize_legend()
 
     def initialize_map(self):
         reader = vtk.vtkPNGReader()
