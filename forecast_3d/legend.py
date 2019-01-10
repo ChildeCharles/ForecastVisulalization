@@ -47,7 +47,7 @@ def create_temperature_actors(widget_width, widget_height):
 
     actor = vtk.vtkActor2D()
     actor.SetMapper(mapper)
-    actor.GetProperty().SetColor(1, 1, 1)
+    actor.GetProperty().SetColor(0, 0, 0)
 
     legend_actors.append(actor)
 
@@ -55,7 +55,7 @@ def create_temperature_actors(widget_width, widget_height):
     txt.SetInput("T [ºC]")
     txt.GetTextProperty().SetFontFamilyToTimes()
     txt.GetTextProperty().SetFontSize(18)
-    txt.GetTextProperty().SetColor(0, 0, 0)
+    txt.GetTextProperty().SetColor(1, 1, 1)
     txt.SetDisplayPosition(int(widget_width - (temperature_item_width / 2) - 25),
                            int(temperature_item_height / 2 + len(temperature_labels) * temperature_item_height - 12))
 
@@ -109,7 +109,7 @@ def create_pressure_actors(widget_width, widget_height):
 
     actor = vtk.vtkActor2D()
     actor.SetMapper(mapper)
-    actor.GetProperty().SetColor(1, 1, 1)
+    actor.GetProperty().SetColor(0, 0, 0)
 
     legend_actors.append(actor)
 
@@ -117,7 +117,7 @@ def create_pressure_actors(widget_width, widget_height):
     txt.SetInput("p [hPa]")
     txt.GetTextProperty().SetFontFamilyToTimes()
     txt.GetTextProperty().SetFontSize(18)
-    txt.GetTextProperty().SetColor(0, 0, 0)
+    txt.GetTextProperty().SetColor(1, 1, 1)
     txt.SetDisplayPosition(int(pressure_item_width / 2 - 29),
                            int(pressure_item_height / 2 + len(pressure_labels) * pressure_item_height - 12))
 

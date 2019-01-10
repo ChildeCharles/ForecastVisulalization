@@ -30,6 +30,7 @@ def create_actors(x, y, temperature, is_visible):
     textActor.SetScale(8, 8, 8)
     textActor.AddPosition(x - 16, y - 23, 1)
     textActor.GetProperty().SetColor(0, 0, 0)
+    textActor.SetVisibility(is_visible)
 
     return actor, textActor
 

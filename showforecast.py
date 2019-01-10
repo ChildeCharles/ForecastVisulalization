@@ -1,16 +1,14 @@
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from vtk.qt.QVTKRenderWindowInteractor import QVTKRenderWindowInteractor
-import vtk
-from window import Ui_MainWindow
-import sys
 import json
+import sys
 from pprint import pprint
-import datetime
-import requests
 from urllib.parse import urlencode
-from map_widget import MapWidget
+
+import requests
+from PyQt5.QtWidgets import *
+
+from forecast_3d.map_widget import MapWidget
+from forecast_2d.plots_widget import PlotsWidget
+from window import Ui_MainWindow
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -22,7 +20,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.weather_data, self.forecast_data = self.download_data(cities)
         self.initialize_combo_boxes(cities, self.forecast_data)
         self.map_widget = MapWidget(parent=self.widget_3d, geographic_bounds=self.bounds, cities=cities)
+        self.plots_widget = PlotsWidget(parent=self.widget_2d)
         self.render_data_on_map()
+        self.draw_plots()
         self.precipitation_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'precipitation'))
         self.clouds_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'clouds'))
         self.wind_checkbox.stateChanged.connect(lambda checked: self.map_widget.toggle_data(checked, 'wind'))
@@ -60,7 +60,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for city in cities:
             self.city_combo_box.addItem(city['name'], city)
 
-        self.city_combo_box.currentIndexChanged.connect(self.print_selected_city)
+        self.city_combo_box.currentIndexChanged.connect(self.select_city)
 
         for city_id, forecast in forecast_data.items():
             for forecast_item in forecast['list']:
@@ -89,7 +89,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.map_widget.render_data(forecasts_for_cities, visibilities)
 
-    def print_selected_city(self, index):
+    def draw_plots(self):
+        self.plots_widget.draw_plots()
+
+    def select_city(self, index):
         pprint(self.city_combo_box.itemData(index))
 
     def select_date(self, index):

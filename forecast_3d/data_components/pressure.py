@@ -30,6 +30,7 @@ def create_actors(x, y, pressure, is_visible):
     textActor.SetScale(8, 8, 8)
     textActor.AddPosition(x - 15 - 30, y - 23, 1)
     textActor.GetProperty().SetColor(1, 1, 1)
+    textActor.SetVisibility(is_visible)
 
     return actor, textActor
 

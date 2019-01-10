@@ -12,6 +12,7 @@ colors.SetColor("wind", [0, 0, 255, 255])
 colors.SetColor("yellow", [255, 255, 0, 255])
 colors.SetColor("greenish", [13, 241, 0, 255])
 
+
 temperature_thresholds = [x * 10 for x in range(-2, 5 + 1)]
 temperature_labels = ['> {}'.format(x) for x in temperature_thresholds]
 temperature_labels.insert(0, '< {}'.format(temperature_thresholds[0]))
@@ -26,6 +27,7 @@ temperature_colors.SetColor(temperature_labels[3], [0, 255, 255, 255])
 temperature_colors.SetColor(temperature_labels[2], [0, 170, 255, 255])
 temperature_colors.SetColor(temperature_labels[1], [0, 85, 255, 255])
 temperature_colors.SetColor(temperature_labels[0], [0, 0, 255, 255])
+
 
 pressure_thresholds = [x * 10 for x in range(97, 104 + 1)]
 pressure_labels = ['>{}'.format(x) for x in pressure_thresholds]

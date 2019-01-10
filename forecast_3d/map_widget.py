@@ -3,7 +3,8 @@ from PyQt5.QtWidgets import *
 from vtk.qt.QVTKRenderWindowInteractor import QVTKRenderWindowInteractor
 
 from constants import IMAGES_PATH, MAP_FILENAME
-from weather_3d_data import legend, precipitation, clouds, wind, temperature, pressure
+from forecast_3d import legend
+from forecast_3d.data_components import clouds, precipitation, pressure, temperature, wind
 
 
 def normalize(value, minimum, maximum):
